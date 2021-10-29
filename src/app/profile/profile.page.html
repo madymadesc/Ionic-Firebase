@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar class="mad">
+      <ion-back-button slot="start"></ion-back-button>
+      <ion-img  src="assets/images/logout_a.png" style="height: 40px; width: 40px;" (click)="logout()"></ion-img>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-header class="profi" >
+    <ion-title color="primary">Profile</ion-title>
+    <ion-img  src="assets/images/user_a.png"></ion-img>
+   </ion-header>
+
+
+
+
+   <ion-list>
+    <ion-item>
+      <ion-label>Nom</ion-label>
+      <ion-label>{{name}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Prenom</ion-label>
+      <ion-label>{{pname}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-label>{{email}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mobile</ion-label>
+      <ion-label>{{phone}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-label>{{password}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <div>
+   <!-- button mot de passe oublie -->
+   <p><a routerLink="/renitialise">Change votre mot de passe   </a></p>
+  </div>
+</ion-content>

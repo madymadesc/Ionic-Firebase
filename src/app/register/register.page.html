@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-view cache-view="false" view-title="My Title!">
+
+      <ion-header>
+        <h1>Register</h1>
+      </ion-header>
+
+      <form autocomplete="off" class="form" [formGroup]="validations_form" (ngSubmit)="tryRegister(validations_form.value)">
+        <ion-card>
+
+          <!-- cham nom -->
+          <ion-item lines="full">
+            <ion-label position="floating">Nom</ion-label>
+            <ion-input type="text" formControlName="name" placeholder="Nom" required></ion-input>
+          </ion-item>
+          <!-- cham prénom -->
+          <ion-item lines="full">
+            <ion-label position="floating">Prénom</ion-label>
+            <ion-input type="text" formControlName="pname" placeholder="Prénom" required></ion-input>
+          </ion-item>
+          <!-- cham User name -->
+          <!-- <ion-item lines="full">
+            <ion-label position="floating">User Name</ion-label>
+            <ion-input type="text" placeholder="Nom d'utilisateur" required></ion-input>
+          </ion-item> -->
+          <!-- cham email -->
+          <ion-item lines="full">
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email" placeholder="ex:  mail@mail.com" required></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.email">
+              <div class="error-message"
+                *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <!-- cham Telephone -->
+          <ion-item lines="full">
+            <ion-label position="floating">Mobile</ion-label>
+            <ion-input type="number" formControlName="mobile" placeholder="ex: 12 34 56 78" required></ion-input>
+          </ion-item>
+
+          <!-- cham mot de passe -->
+          <ion-item lines="full">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password" placeholder="************" required></ion-input>
+          </ion-item>
+          <!-- cham mot de passe -->
+          <!-- <ion-item lines="full">
+            <ion-label position="floating">Confirme</ion-label>
+            <ion-input type="password" formControlName="confirmepassword" placeholder="************" required></ion-input>
+          </ion-item> -->
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.password">
+              <div class="error-message"
+                *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <!-- button submit -->
+          <ion-row>
+            <ion-col>
+              <ion-button class="submit-btn" type="submit" [disabled]="!validations_form.valid" expand="block" routerLink="/register">
+                Register
+              </ion-button>
+              <label class="error-message">{{errorMessage}}</label>
+              <label class="success-message">{{successMessage}}</label>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+  </form>
+  <p class="go-to-login">Vous avez déjà un compte ? <a (click)="goLoginPage()">Essayez de vous connecter. </a></p>
+</ion-view>
+</ion-content>
+

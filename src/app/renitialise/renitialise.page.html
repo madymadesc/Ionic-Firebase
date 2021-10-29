@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>{{name}}  {{pname}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <form >
+    <ion-card>
+      <!-- cham mot de passe -->
+      <ion-item lines="full">
+        <ion-label position="floating">Ancien mot de passe</ion-label>
+        <ion-input type="password" placeholder="Ancien mot de passe" required></ion-input>
+      </ion-item>
+      <!-- cham mot de passe -->
+      <ion-item lines="full">
+        <ion-label position="floating">Nouveau mot de passe</ion-label>
+        <ion-input type="password" placeholder="Nouveau mot de passe" required></ion-input>
+      </ion-item>
+      <!-- cham mot de passe -->
+       <ion-item lines="full">
+        <ion-label position="floating">Confirme</ion-label>
+        <ion-input type="password" placeholder="Confirmé le nouveau mot de passe " required></ion-input>
+      </ion-item>
+      <!-- button submit -->
+
+          <ion-button class="submit-btn" type="submit" expand="block" (click)="logout()">
+            Valider
+          </ion-button>
+
+    </ion-card>
+</form>
+</ion-content>
+

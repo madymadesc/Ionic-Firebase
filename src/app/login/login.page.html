@@ -1,0 +1,58 @@
+
+<ion-content class="ion-padding" >
+  <!-- Photo entete -->
+
+
+       <!-- <div class="bac">
+         <h1>Orange Digital Kalanso</h1>
+
+       </div> -->
+
+
+
+  <form class="form" [formGroup]="validations_form" (ngSubmit)="loginUser(validations_form.value)">
+   <ion-card class="mad">
+     <!-- entette -->
+     <ion-header >
+       <ion-img  src="assets/images/user.png"></ion-img>
+        <h2>Connexion</h2>
+      </ion-header>
+
+     <!-- Insertion de nom d'utilisateur -->
+     <ion-item>
+       <ion-icon name="person-outline" color="primary"></ion-icon>
+       <ion-input autocomplete="off" type="email" formControlName="email" placeholder="       Email"  ></ion-input>
+     </ion-item>
+     <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message"
+          *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+     <!-- Insertion du mot de passe -->
+     <ion-item>
+       <ion-icon name="bag-outline" color="primary"></ion-icon>
+       <ion-input type="Password" placeholder="       Password"  autocomplete="off" formControlName="password"  required></ion-input>
+     </ion-item>
+     <div class="oubli">
+     <!-- button mot de passe oublie -->
+        <p><a routerLink="/oublie">Mot de passe oublié ?  </a></p>
+    </div>
+     <!-- button submit -->
+     <ion-button fill="outline"  expand="block" [disabled]="!validations_form.valid" type="submit">
+       Log In
+     </ion-button>
+     <label class="error-message">{{errorMessage}}</label>
+     <!-- button register -->
+     <ion-button expand="block" routerLink="/register">
+      Register
+    </ion-button>
+     <!-- <ion-button expand="block" share="round" color="success" (click)="loginAction()">Login</ion-button> -->
+   </ion-card>
+
+  </form>
+
+</ion-content>

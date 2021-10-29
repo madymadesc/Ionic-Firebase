@@ -1,0 +1,77 @@
+<!--
+<ion-content [fullscreen]="true" collapse="condense">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title >Mady Camara</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="head">
+  <ion-img  src="assets/images/user_a.png" routerLink="/profile"></ion-img>
+   <div class="chearch">
+    <ion-img  src="assets/images/search.png" routerLink="/search"></ion-img>
+
+  </div>
+ <p routerLink="/profile">profile</p>
+<div>
+  <ion-label>Liste des utilisateur</ion-label>
+
+</div>
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar class="mad">
+    <ion-title>{{name}}  {{pname}}</ion-title>
+    <!-- <ion-button fill="outline" (click)="logout()">
+      <ion-icon name="log-out"></ion-icon>
+    </ion-button> -->
+    <ion-img  src="assets/images/logout_a.png" title="Deconnexion" style="height: 40px; width: 40px;" (click)="logout()"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="head">
+    <div class="heada">
+      <ion-img  src="assets/images/user_a.png" routerLink="/profile"></ion-img>
+      <ion-label color="primary" routerLink="/profile">Profile</ion-label>
+    </div>
+    <div class="chearch">
+      <ion-img  src="assets/images/search.png" routerLink="/search"></ion-img>
+      <ion-label color="primary" routerLink="/search">Search</ion-label>
+    </div>
+  </div>
+  <div>
+
+    <h4>Liste des utilisateurs</h4>
+
+</div>
+<div>
+  <!-- <ion-item>
+    <ion-label *ngFor="let user of userList">
+      <h1>{{user.prenom}}</h1>
+      <h2>{{user.nom}}</h2>
+      <h3>{{user.email}}</h3>
+
+    </ion-label>
+  </ion-item> -->
+
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Nom</ion-label>
+        <ion-label>Prenom</ion-label>
+        <ion-label>Mobile</ion-label>
+      </ion-item>
+      <ion-item *ngFor="let item of userList">
+        <ion-label>{{item.nom}}</ion-label>
+        <ion-label>{{item.prenom}}</ion-label>
+        <ion-label>{{item.telephone}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+
+</div>
+
+
+</ion-content>
+

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>oublie</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-header>
+    <ion-card>
+    <p>Vous avez oublié votre mot de passe ?</p>
+    <p> Veuillez indiquez l'adresse email associer à votre compte pour
+      générer un nouveau mot de passe.</p>
+
+    </ion-card>
+  </ion-header>
+
+  <form autocomplete="off" class="">
+    <ion-card>
+      <!-- cham email -->
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" placeholder=" Votre adresse email" required></ion-input>
+      </ion-item>
+      <!-- button submit -->
+          <ion-button type="submit" expand="block" routerLink="/login"  onclick="alert('Confirmer le lien envoyé par mail')">
+            Envoyer
+          </ion-button>
+    </ion-card>
+  </form>
+</ion-content>
